@@ -44,4 +44,9 @@ public class TeacherService {
                 .orElseThrow(() -> new ApiException("Teacher was not found"));
         teacherRepository.delete(teacher);
     }
+
+    public Teacher getTeacherById(Integer id) {
+        return teacherRepository.findById(id)
+                .orElseThrow(() -> new ApiException("Teacher was not found"));
+    }
 }
